@@ -2,6 +2,10 @@
 
 BrightWave Studio
 
+## Screenshot
+
+![alt text](image.png)
+
 ## Description
 
 A modern, responsive landing-page site for a web design & development studio,
@@ -35,13 +39,34 @@ conversation.
 - No real client testimonials, case studies, or production assets yet —
   content is illustrative
 
+## Live Features
+
+- Crisp live chat fully integrated and mobile-synced
+- Real-time visitor tracking via Crisp
+- Custom branded chatbox with welcome message
+- Contact form confirmation state with UX polish
+- Fully responsive across mobile, tablet, and desktop
+- Production deployment on Vercel
+
+## Recent Improvements
+
+- Updated spacing, layout, and UI polish across all sections
+- Improved scroll behavior and button interactions
+- Enhanced typography and visual hierarchy
+- Cleaned component structure and removed unused code
+- Verified Tailwind v4 configuration and build stability
+
+## Next Steps
+
+- Instagram Growth Showcase using the official Instagram Graph API
+- Add follower count + engagement metrics to the site
+- Create a Facebook Page and link Instagram Business account
+- Implement serverless API route for Instagram data
+- Add caching layer for stable API performance
+
 ## End-Project Considerations
 
-- Connect the contact form to a real endpoint (Formspree, Resend, or a
-  custom API route) before sharing this with prospects
 - Buy `brightwavestudio.com` and set up `hello@` on it
-- Swap placeholder screenshots/photos in the portfolio templates for real
-  project shots once available
 - Add analytics before driving traffic to it
 - Revisit copy once there's a first real client project to reference
 
