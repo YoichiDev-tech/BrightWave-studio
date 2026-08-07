@@ -1,0 +1,129 @@
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Where inquiries land. Override with a CONTACT_TO_EMAIL env var if needed.
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "hello@brightwavestudio.com";
+
+// Must be an address on a domain you've verified in Resend
+// Until a domain is verified, Resend's shared onboarding@resend.dev
+// address works for testing (delivery limits apply — see Resend's docs).
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "BrightWave Studio <onboarding@resend.dev>";
+
+type Intent = "audit" | "build";
+
+interface ContactPayload {
+  intent: Intent;
+  name: string;
+  email: string;
+  business: string;
+  siteUrl: string;
+  idea: string;
+  message: string;
+}
+
+// Minimal structural types for Vercel's Node.js request/response objects.
+// Vercel augments plain Node req/res with .body, .method, .status(), .json()
+// at runtime regardless of which types you import — these just describe
+// that shape for the type checker, without pulling in @vercel/node
+interface VercelLikeRequest {
+  method?: string;
+  body?: unknown;
+}
+
+interface VercelLikeResponse {
+  status(code: number): VercelLikeResponse;
+  json(body: Record<string, unknown>): void;
+}
+
+function isContactPayload(data: unknown): data is ContactPayload {
+  if (typeof data !== "object" || data === null) return false;
+  const d = data as Record<string, unknown>;
+  return (
+    (d.intent === "audit" || d.intent === "build") &&
+    typeof d.name === "string" &&
+    typeof d.email === "string" &&
+    typeof d.message === "string" &&
+    typeof d.business === "string" &&
+    typeof d.siteUrl === "string" &&
+    typeof d.idea === "string"
+  );
+}
+
+export default async function handler(req: VercelLikeRequest, res: VercelLikeResponse): Promise<void> {
+  if (req.method !== "POST") {
+    res.status(405).json({ error: "Method not allowed." });
+    return;
+  }
+
+  if (!process.env.RESEND_API_KEY) {
+    console.error("RESEND_API_KEY is not set.");
+    res.status(500).json({ error: "Email sending isn't configured yet." });
+    return;
+  }
+
+  // Vercel auto-parses JSON bodies into req.body when Content-Type is
+  // application/json, so there's no need to read/parse a stream here
+  const payload = req.body;
+
+  if (!isContactPayload(payload)) {
+    res.status(400).json({ error: "Malformed request." });
+    return;
+  }
+
+  const intent = payload.intent;
+  const name = payload.name.trim();
+  const email = payload.email.trim();
+  const business = payload.business.trim();
+  const siteUrl = payload.siteUrl.trim();
+  const idea = payload.idea.trim();
+  const message = payload.message.trim();
+
+  if (!name || !email || !message) {
+    res.status(400).json({ error: "Name, email, and message are required." });
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    res.status(400).json({ error: "Enter a valid email address." });
+    return;
+  }
+
+  const intentLabel = intent === "audit" ? "Free audit request" : "New build inquiry";
+
+  const detailLines =
+    intent === "audit"
+      ? [`Current site: ${siteUrl || "—"}`]
+      : [`Idea: ${idea || "—"}`];
+
+  try {
+    const { error } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: TO_EMAIL,
+      replyTo: email,
+      subject: `${intentLabel} from ${name}${business ? ` — ${business}` : ""}`,
+      text: [
+        `Type: ${intentLabel}`,
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Business: ${business || "—"}`,
+        ...detailLines,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
+    });
+
+    if (error) {
+      console.error("Resend error:", error);
+      res.status(502).json({ error: "The message could not be sent. Please try again." });
+      return;
+    }
+
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error("Unexpected error sending email:", err);
+    res.status(500).json({ error: "Unexpected server error." });
+  }
+}
