@@ -8,17 +8,14 @@ BrightWave Studio
 
 ## Description
 
-A modern, responsive landing-page site for a web design & development studio,
-built with React, TypeScript, Vite, and Tailwind CSS v4.
+A fully custom, modern studio website built with React, TypeScript, Tailwind CSS and Vite.
+Designed to show new/small/medium-sized business owners what a fast, handcrafted site looks and feels like.
 
 ## Project Purpose
 
-A portfolio piece for BrightWave Studio, built to show business owners what a
-modern, fast, custom-built site looks like — and to demonstrate frontend
-skill for landing client work. The three portfolio templates (bakery, SaaS,
-boutique) double as a live style-picker: a prospect can browse a template
-close to their own business and use it as a starting point for a
-conversation.
+This project serves as the official BrightWave Studio website. It showcases real sections,
+real UX, real templates, and a real studio flow — giving prospects a clear sense of how I build,
+how I communicate, and what working together looks like.
 
 ## Tech Stack
 
@@ -48,14 +45,6 @@ conversation.
 - Fully responsive across mobile, tablet, and desktop
 - Production deployment on Vercel
 
-## Recent Improvements
-
-- Updated spacing, layout, and UI polish across all sections
-- Improved scroll behavior and button interactions
-- Enhanced typography and visual hierarchy
-- Cleaned component structure and removed unused code
-- Verified Tailwind v4 configuration and build stability
-
 ## Next Steps
 
 - Instagram Growth Showcase using the official Instagram Graph API
@@ -63,12 +52,43 @@ conversation.
 - Create a Facebook Page and link Instagram Business account
 - Implement serverless API route for Instagram data
 - Add caching layer for stable API performance
+- Add SEO metadata
+- Add a privacy policy
+- Add analytics
+- Testimonials to get ready
 
 ## End-Project Considerations
 
 - Buy `brightwavestudio.com` and set up `hello@` on it
 - Add analytics before driving traffic to it
 - Revisit copy once there's a first real client project to reference
+
+## Changelog
+
+### 08/08/2026
+- Updated spacing, layout, and UI polish across all sections
+- Improved scroll behavior and button interactions
+- Enhanced typography and visual hierarchy
+- Cleaned component structure and removed unused code
+- Verified Tailwind v4 configuration and build stability
+
+### 10/08/2026
+
+### stack
+- Crisp chat integration
+- Calendly scheduling
+- Suoabase
+
+### current status
+- Crisp chat integration added
+- Calendly booking flow added
+- Planned testimonials
+- Fully responsive
+
+### live features
+- Pricing section added
+- FAQ section answering common questions
+- About section
 
 ## Author
 
