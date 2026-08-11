@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/TemplateChrome";
+import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 import { SundayBouquet, CitrusHerbJar, DriedBloomBundle } from "../../components/illustrations/BloomProducts";
 import {
   IconFlowerStem,
@@ -34,7 +34,7 @@ const GRID_TILES: { bg: string; art: ComponentType<{ className?: string }> }[] =
 
 export default function BloomMarket() {
   return (
-    <div style={{ background: CREAM, color: PLUM, fontFamily: "'Inter', sans-serif" }} className="min-h-screen">
+    <div style={{ background: CREAM, color: PLUM, fontFamily: "'Inter', sans-serif" }} className="min-h-screen cursor-default">
       <BackToStudioBadge tone="light" />
       <PickThisTemplateBadge tone="light" />
 

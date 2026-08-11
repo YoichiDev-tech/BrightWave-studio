@@ -1,4 +1,4 @@
-import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/TemplateChrome";
+import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 import LoafSpread from "../../components/illustrations/LoafSpread";
 import OvenScene from "../../components/illustrations/OvenScene";
 
@@ -24,7 +24,7 @@ const MENU = [
 
 export default function FieldingRye() {
   return (
-    <div style={{ background: PAPER, color: INK, fontFamily: "'Inter', sans-serif" }} className="min-h-screen">
+    <div style={{ background: PAPER, color: INK, fontFamily: "'Inter', sans-serif" }} className="min-h-screen cursor-default">
       <BackToStudioBadge tone="light" />
       <PickThisTemplateBadge tone="light" />
 

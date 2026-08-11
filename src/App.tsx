@@ -4,8 +4,9 @@ import FieldingRye from "./pages/templates/FieldingRye";
 import NovaCloud from "./pages/templates/NovaCloud";
 import BloomMarket from "./pages/templates/BloomMarket";
 import ScrollToTop from "./components/ScrollToTop";
-import Testimonials from "./pages/Testimonials";
+// import Testimonials from "./pages/Testimonials";
 import LiveChat from "./components/LiveChat";
+import BloomMarketCaseStudy from "./pages/case-studies/BloomMarketCaseStudy";
 
 export default function App() {
   return (
@@ -17,7 +18,8 @@ export default function App() {
         <Route path="/work/fielding-and-rye" element={<FieldingRye />} />
         <Route path="/work/nova-cloud" element={<NovaCloud />} />
         <Route path="/work/bloom-market" element={<BloomMarket />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+
+        <Route path="/work/bloom-market/case-study" element={<BloomMarketCaseStudy />} />
       </Routes>
     </>
   );

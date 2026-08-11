@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="grain relative overflow-hidden bg-ink py-24 md:py-32">
+    <section id="pricing" className="grain relative overflow-hidden bg-ink py-24 md:py-32 cursor-default">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[720px] -translate-x-1/2 rounded-full opacity-20 blur-[130px]"
@@ -25,7 +25,7 @@ export default function Pricing() {
 
         <Reveal delay={1} className="mt-16 grid gap-10 md:grid-cols-3">
           {/* Landing Page */}
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8">
+          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
             <h3 className="font-display text-xl font-semibold text-paper mb-3">
               Landing Page
             </h3>
@@ -45,7 +45,7 @@ export default function Pricing() {
           </div>
 
           {/* Small Business Site */}
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8">
+          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
             <h3 className="font-display text-xl font-semibold text-paper mb-3">
               Small Business Site
             </h3>
@@ -65,7 +65,7 @@ export default function Pricing() {
           </div>
 
           {/* Website Redesign */}
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8">
+          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
             <h3 className="font-display text-xl font-semibold text-paper mb-3">
               Website Redesign
             </h3>

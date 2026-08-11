@@ -72,7 +72,7 @@ const reasons: Reason[] = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-ink-2 py-24 md:py-32">
+    <section id="why-us" className="bg-ink-2 py-24 md:py-32 cursor-default">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-16 md:grid-cols-[0.8fr_1.2fr]">
           <Reveal>

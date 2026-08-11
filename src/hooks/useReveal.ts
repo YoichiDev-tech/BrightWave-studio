@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Adds the `is-visible` class to the element once it scrolls into view.
- * Pairs with the `.reveal` utility defined in index.css.
+ * Adds the `is-visible` class to the element once it scrolls into view
+ * Pairs with the `.reveal` utility defined in index.css
  */
 export function useReveal<T extends HTMLElement>(threshold = 0.2) {
   const ref = useRef<T | null>(null);

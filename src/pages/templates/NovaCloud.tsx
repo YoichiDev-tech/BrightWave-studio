@@ -1,4 +1,4 @@
-import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/TemplateChrome";
+import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 const BG = "#0B1220";
@@ -21,7 +21,7 @@ const TIERS = [
 
 export default function NovaCloud() {
   return (
-    <div style={{ background: BG, color: "#E7ECF5", fontFamily: "'Inter', sans-serif" }} className="min-h-screen">
+    <div style={{ background: BG, color: "#E7ECF5", fontFamily: "'Inter', sans-serif" }} className="min-h-screen cursor-default">
       <BackToStudioBadge tone="dark" />
       <PickThisTemplateBadge tone="dark" />
 

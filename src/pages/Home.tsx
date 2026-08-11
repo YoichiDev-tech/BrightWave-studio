@@ -9,11 +9,12 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 // import TestimonialsPreview from "../components/TestimonialsPreview";
-import ReviewPopup from "../components/ReviewPopup";
+// import ReviewPopup from "../components/ReviewPopup";
 import Pricing from "../components/Pricing";
 import FAQ from "../components/FAQ";
 import About from "../components/About";
 import Calendly from "../components/Calendly";
+import Process from "../components/Process";
 
 export type Intent = "audit" | "build";
 
@@ -39,6 +40,7 @@ export default function Home() {
         <Hero onSelectIntent={setIntent} />
         <SignsOutdated onSelectIntent={setIntent} />
         <Services />
+        <Process />
         <Pricing />
         <BuildYourIdea onSelectIntent={setIntent} />
         <Portfolio />
@@ -49,10 +51,6 @@ export default function Home() {
         <Contact intent={intent} onIntentChange={setIntent} />
       </main>
       <Footer />
-
-      {showReviewPopup && (
-        <ReviewPopup onClose={() => setShowReviewPopup(false)} />
-      )}
     </>
   );
 }

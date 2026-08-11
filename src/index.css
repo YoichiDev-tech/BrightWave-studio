@@ -74,7 +74,7 @@
   }
 }
 
-/* ---------- Scroll reveal ---------- */
+/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -103,7 +103,7 @@
   }
 }
 
-/* ---------- Signature waveform ---------- */
+/* Signature waveform */
 @keyframes wave-draw {
   from { stroke-dashoffset: 1400; }
   to { stroke-dashoffset: 0; }

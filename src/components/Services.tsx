@@ -63,7 +63,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-ink py-24 md:py-32">
+    <section id="services" className="bg-ink py-24 md:py-32 cursor-default">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="max-w-xl">
           <p className="font-mono text-[12px] uppercase tracking-widest text-ink-soft">What we build</p>

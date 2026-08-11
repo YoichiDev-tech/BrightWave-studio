@@ -8,7 +8,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
   return (
     <section
       id="top"
-      className="grain relative overflow-hidden bg-ink pb-24 pt-36 md:pb-32 md:pt-44"
+      className="grain relative overflow-hidden bg-ink pb-24 pt-36 md:pb-32 md:pt-44 cursor-default"
     >
       {/* ambient glow */}
       <div
@@ -83,7 +83,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
         </div>
 
         {/* Signature: animated waveform, literal read of "BrightWave" */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center rounded-3xl border border-ink-line transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
           <div className="relative w-full max-w-sm rounded-3xl border border-ink-line bg-ink-2/60 p-8 backdrop-blur-sm">
             <p className="font-mono text-[11px] uppercase tracking-widest text-ink-soft">Signal — live preview</p>
             <svg viewBox="0 0 340 160" className="mt-6 w-full" aria-hidden="true">

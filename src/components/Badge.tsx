@@ -1,8 +1,28 @@
 import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
 
 interface TemplateChromeProps {
-  /** Text/background tuned per-template so the badges sit well on each palette. */
+  /* Text/background tuned per-template so the badges sit well on each palette */
   tone?: "light" | "dark";
+}
+
+export default function BrowserChrome({ children, bg }: { children: ReactNode; bg: string }) {
+  return (
+    <div
+      className="overflow-hidden rounded-xl border border-ink-line cursor-default"
+      style={{ background: bg }}
+    >
+      <div className="flex items-center gap-1.5 border-b border-black/10 px-3 py-2.5">
+        <span className="h-2 w-2 rounded-full bg-black/20" />
+        <span className="h-2 w-2 rounded-full bg-black/20" />
+        <span className="h-2 w-2 rounded-full bg-black/20" />
+      </div>
+
+      <div className="relative h-52 overflow-hidden">
+        {children}
+      </div>
+    </div>
+  );
 }
 
 export function BackToStudioBadge({ tone = "dark" }: TemplateChromeProps) {
@@ -28,7 +48,7 @@ export function PickThisTemplateBadge({ tone = "dark" }: TemplateChromeProps) {
     <Link
       to="/#contact"
       className={`fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full px-5 py-3 font-display text-sm font-semibold shadow-xl transition-transform hover:scale-105 sm:bottom-6 sm:right-6 ${
-        isDark ? "text-ink" : "text-white"
+        isDark ? "text-ink" : "text-white cursor-default"
       }`}
       style={{
         background: isDark
@@ -36,7 +56,7 @@ export function PickThisTemplateBadge({ tone = "dark" }: TemplateChromeProps) {
           : "linear-gradient(100deg, #3A1220 0%, #7A2E4D 100%)",
       }}
     >
-      This is my style &rarr;
+      This is our style &rarr;
     </Link>
   );
 }

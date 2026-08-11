@@ -7,7 +7,7 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink-line bg-ink">
+    <footer className="border-t border-ink-line bg-ink cursor-default">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>

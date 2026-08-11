@@ -29,7 +29,7 @@ export default function Nav({ onSelectIntent }: NavProps) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/85 backdrop-blur-md border-b border-ink-line" : "bg-transparent border-b border-transparent"
+        scrolled ? "bg-ink/85 backdrop-blur-md border-b border-ink-line" : "bg-transparent border-b border-transparent cursor-default"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">

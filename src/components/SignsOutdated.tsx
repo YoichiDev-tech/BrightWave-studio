@@ -15,7 +15,7 @@ const SIGNS = [
 
 export default function SignsOutdated({ onSelectIntent }: SignsOutdatedProps) {
   return (
-    <section className="border-y border-ink-line bg-ink-2 py-20 md:py-28">
+    <section className="border-y border-ink-line bg-ink-2 py-20 md:py-2 cursor-default">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:items-start">
           <Reveal>

@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="grain relative overflow-hidden bg-ink py-24 md:py-32">
+    <section id="about" className="grain relative overflow-hidden bg-ink py-24 md:py-32 cursor-default">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[720px] -translate-x-1/2 rounded-full opacity-20 blur-[130px]"

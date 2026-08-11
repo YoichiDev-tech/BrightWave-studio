@@ -91,7 +91,7 @@ export default function Contact({ intent, onIntentChange }: ContactProps) {
 
 
   return (
-    <section id="contact" className="bg-ink py-24 md:py-32">
+    <section id="contact" className="bg-ink py-24 md:py-32 cursor-default">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <p className="font-mono text-[12px] uppercase tracking-widest text-ink-soft">Get in touch</p>
@@ -107,7 +107,7 @@ export default function Contact({ intent, onIntentChange }: ContactProps) {
         </Reveal>
 
         <Reveal delay={1}>
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-6 md:p-9">
+          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-6 md:p-9 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
             {status === "sent" ? (
               <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full border border-amber text-amber">
