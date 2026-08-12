@@ -56,7 +56,7 @@ export default function BloomMarketCaseStudy() {
             personality of the brand while keeping the content readable.
           </p>
 
-          <Screenshot label="Typography screenshot goes here" />
+          <Screenshot src="/images/bloom/typography.png" label="Bloom Market Typography Preview" />
         </div>
 
         {/* Layout */}
