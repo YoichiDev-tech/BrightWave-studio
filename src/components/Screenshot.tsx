@@ -1,4 +1,5 @@
 interface ScreenshotProps {
+  src?: string;
   label: string;
 }
 
