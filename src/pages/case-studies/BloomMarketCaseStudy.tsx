@@ -44,7 +44,7 @@ export default function BloomMarketCaseStudy() {
             for a boutique brand.
           </p>
 
-          <Screenshot label="Palette screenshot goes here" />
+          <Screenshot src="/images/bloom/palette.png" label="Bloom Market Palette" />
         </div>
 
         {/* Typography */}
