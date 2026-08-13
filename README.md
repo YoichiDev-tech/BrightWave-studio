@@ -90,6 +90,17 @@ how I communicate, and what working together looks like.
 - FAQ section answering common questions
 - About section
 
+### 13/08/2026
+Typography & Palette Enhancements
+- Added TypographyPreview page showcasing the full type system (display, headings, body, caption, label)
+- Captured and integrated the Bloom Market typography screenshot into the case study
+- Updated the Screenshot component to support real image rendering (previously only accepted labels)
+- Refactored case study structure to include the new typography section with proper visual hierarchy
+- Resolved merge conflict in App.tsx and verified routing for /typography-preview
+- Added palette screenshot to the Bloom Market case study (Issue #1 completion)
+- Confirmed build stability after UI additions and component updates
+- Cleaned minor layout inconsistencies across the case study page
+
 ## Author
 
 Yoichi dev
