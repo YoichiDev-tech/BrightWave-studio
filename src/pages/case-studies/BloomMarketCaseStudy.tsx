@@ -68,7 +68,7 @@ export default function BloomMarketCaseStudy() {
             “moment” rather than a rigid grid.
           </p>
 
-          <Screenshot label="Layout screenshot goes here" />
+          <Screenshot src="/images/bloom/layout.png"  label="Bloom Market Layout Preview" />
         </div>
 
         {/* Interaction */}
