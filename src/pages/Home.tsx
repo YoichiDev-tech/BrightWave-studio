@@ -25,14 +25,14 @@ export default function Home() {
   // const [showReviewPopup, setShowReviewPopup] = useState(false);
 
   // Trigger timer to show the review popup after 3 seconds
-  useEffect(() => {
+  /*useEffect(() => {
     const timer = setTimeout(() => {
       setShowReviewPopup(true);
     }, 30000); // Show the review popup after 30 seconds
 
     return () => clearTimeout(timer);
   }, []);
-
+*/
   return (
     <>
       <Nav onSelectIntent={setIntent} />
