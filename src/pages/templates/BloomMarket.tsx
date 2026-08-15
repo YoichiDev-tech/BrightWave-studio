@@ -52,7 +52,7 @@ export default function BloomMarket() {
           </ul>
           <a
             href="#shop"
-            className="rounded-full px-5 py-2.5 text-sm font-bold"
+            className="rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
             style={{ background: PLUM, color: CREAM, fontFamily: ROUND }}
           >
             Shop the drop
@@ -84,10 +84,18 @@ export default function BloomMarket() {
             every week. Cancel or pause anytime.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#shop" className="rounded-full px-7 py-3.5 text-sm font-bold" style={{ background: PINK, color: PLUM, fontFamily: ROUND }}>
+            <a
+              href="#shop"
+              className="rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
+              style={{ background: PINK, color: PLUM, fontFamily: ROUND }}
+            >
               Shop the drop
             </a>
-            <a href="#subscribe" className="rounded-full border-2 px-7 py-3.5 text-sm font-bold" style={{ borderColor: PLUM, fontFamily: ROUND }}>
+            <a
+              href="#subscribe"
+              className="rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
+              style={{ borderColor: PLUM, fontFamily: ROUND }}
+            >
               Start a subscription
             </a>
           </div>
@@ -137,7 +145,11 @@ export default function BloomMarket() {
               the rest.
             </p>
           </div>
-          <a href="#" className="shrink-0 rounded-full px-7 py-3.5 text-sm font-bold" style={{ background: YELLOW, color: PLUM, fontFamily: ROUND }}>
+          <a
+            href="#"
+            className="shrink-0 rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            style={{ background: YELLOW, color: PLUM, fontFamily: ROUND }}
+          >
             Subscribe &amp; save 15%
           </a>
         </div>

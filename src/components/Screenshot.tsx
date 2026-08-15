@@ -1,6 +1,7 @@
 interface ScreenshotProps {
-  src: string;
-  label?: string;
+  src?: string;
+  label: string;
+
 }
 
 export default function Screenshot({ src, label }: ScreenshotProps) {
