@@ -67,6 +67,7 @@ export default function BloomMarketCaseStudy() {
             shapes to create a sense of movement. Each section feels like a
             “moment” rather than a rigid grid.
           </p>
+
         </div>
 
         {/* Interaction */}
