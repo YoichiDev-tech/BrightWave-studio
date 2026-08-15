@@ -22,7 +22,7 @@ export default function Home() {
   // Shared across the whole page: whichever CTA the visitor clicks first
   // (audit vs. build) pre-selects the matching path in the contact form
   const [intent, setIntent] = useState<Intent | null>(null);
-  const [showReviewPopup, setShowReviewPopup] = useState(false);
+  // const [showReviewPopup, setShowReviewPopup] = useState(false);
 
   // Trigger timer to show the review popup after 3 seconds
   useEffect(() => {
