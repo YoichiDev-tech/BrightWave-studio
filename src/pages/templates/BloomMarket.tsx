@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { Link } from "react-router-dom";
 import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 import { SundayBouquet, CitrusHerbJar, DriedBloomBundle } from "../../components/illustrations/BloomProducts";
 import {
@@ -187,7 +188,9 @@ export default function BloomMarket() {
       <footer className="px-6 py-8" style={{ borderTop: `2px solid ${PLUM}` }}>
         <div className="mx-auto flex max-w-6xl flex-col gap-2 text-xs font-semibold uppercase tracking-wide sm:flex-row sm:items-center sm:justify-between" style={{ opacity: 0.6 }}>
           <span>© {new Date().getFullYear()} Bloom Market</span>
-          <span>Template preview by BrightWave Studio</span>
+          <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
+            Template preview by BrightWave Studio
+          </Link>
         </div>
       </footer>
     </div>

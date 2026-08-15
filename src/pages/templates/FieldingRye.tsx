@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 import LoafSpread from "../../components/illustrations/LoafSpread";
 import OvenScene from "../../components/illustrations/OvenScene";
@@ -173,9 +174,9 @@ export default function FieldingRye() {
               Hours
             </p>
             <p className="mt-3 text-sm leading-relaxed">
-              Tue–Fri 7am–3pm
+              Tue-Fri 7am-3pm
               <br />
-              Sat–Sun 8am–2pm
+              Sat-Sun 8am-2pm
               <br />
               Closed Mondays
             </p>
@@ -206,7 +207,9 @@ export default function FieldingRye() {
       <footer className="border-t py-8" style={{ borderColor: RULE }}>
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 text-[11px] uppercase tracking-widest sm:flex-row sm:items-center sm:justify-between" style={{ opacity: 0.5 }}>
           <span>© {new Date().getFullYear()} Fielding &amp; Rye</span>
-          <span>Template preview by BrightWave Studio</span>
+          <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
+            Template preview by BrightWave Studio
+          </Link>
         </div>
       </footer>
     </div>

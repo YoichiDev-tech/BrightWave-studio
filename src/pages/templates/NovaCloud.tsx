@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BackToStudioBadge, PickThisTemplateBadge } from "../../components/Badge";
 
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
@@ -92,14 +93,14 @@ export default function NovaCloud() {
               </span>
             </div>
             <pre className="mt-4 overflow-x-auto text-[12px] leading-relaxed text-white/70" style={{ fontFamily: MONO }}>
-{`$ nova status --region us-east
-✓ api.checkout        122ms  200
-✓ api.auth             48ms  200
-✓ worker.payments      91ms  200
-✓ edge.cdn              9ms  200
+              {`$ nova status --region us-east
+              ✓ api.checkout        122ms  200
+              ✓ api.auth             48ms  200
+              ✓ worker.payments      91ms  200
+              ✓ edge.cdn              9ms  200
 
-uptime (30d)  99.98%
-p95 latency    134ms`}
+              uptime (30d)  99.98%
+              p95 latency    134ms`}
             </pre>
             <div className="mt-5 rounded-lg p-4" style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${LINE}` }}>
               <div className="flex items-center justify-between">
@@ -217,7 +218,9 @@ p95 latency    134ms`}
           style={{ fontFamily: MONO }}
         >
           <span>© {new Date().getFullYear()} nova_cloud</span>
-          <span>Template preview by BrightWave Studio</span>
+          <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
+            Template preview by BrightWave Studio
+          </Link>
         </div>
       </footer>
     </div>

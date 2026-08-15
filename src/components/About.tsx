@@ -1,4 +1,12 @@
 import Reveal from "./Reveal";
+import BrandReel from "./BrandReel";
+
+const CREDIBILITY = [
+  { label: "Response time", value: "1 business day" },
+  { label: "Code ownership", value: "100% yours" },
+  { label: "Built with", value: "React & TypeScript" },
+  { label: "Pricing", value: "Fixed, no surprises" },
+];
 
 export default function About() {
   return (
@@ -19,44 +27,66 @@ export default function About() {
           </h2>
         </Reveal>
 
-        <Reveal delay={1} className="mt-14 mx-auto max-w-3xl space-y-8">
-          <p className="text-ink-soft text-lg leading-relaxed">
-            We're BrightWave Studio — a small, focused team with roots in hospitality
-            and service-based businesses. Before stepping into development, we spent
-            years working directly with customers, solving real problems in real
-            environments. That experience shapes everything we build today.
-          </p>
+        <div className="mt-16 grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+          <Reveal delay={1}>
+            <BrandReel className="aspect-[4/3] w-full" />
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              {CREDIBILITY.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-xl border border-ink-line bg-ink-2/60 px-4 py-3.5 transition-colors hover:border-amber"
+                >
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-ink-soft">
+                    {item.label}
+                  </p>
+                  <p className="mt-1 font-display text-sm font-semibold text-paper">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
 
-          <p className="text-ink-soft text-lg leading-relaxed">
-            We understand how small businesses operate, what slows them down, and
-            what actually helps them grow. A website isn't just a design — it's a
-            tool that needs to support your workflow, your customers, and your goals.
-          </p>
+          <Reveal delay={2} className="space-y-6">
+            <p className="text-ink-soft text-[15px] leading-relaxed">
+              We're BrightWave Studio — a small, focused team with roots in
+              hospitality and service-based businesses. Before stepping into
+              development, we spent years working directly with customers,
+              solving real problems in real environments. That experience
+              shapes everything we build today.
+            </p>
 
-          <p className="text-ink-soft text-lg leading-relaxed">
-            When we moved into development, we brought that mindset with us. Every
-            project we take on is built with clarity, simplicity, and real-world
-            usability. No bloated features, no confusing dashboards, no agency-style
-            upsells — just clean, fast, effective websites that do their job.
-          </p>
+            <p className="text-ink-soft text-[15px] leading-relaxed">
+              We understand how small businesses operate, what slows them
+              down, and what actually helps them grow. A website isn't just a
+              design — it's a tool that needs to support your workflow, your
+              customers, and your goals.
+            </p>
 
-          <p className="text-ink-soft text-lg leading-relaxed">
-            If you're a small business owner, you're not hiring “just a coder.”
-            You're partnering with a team that understands your world and builds
-            with your customers in mind.
-          </p>
-        </Reveal>
+            <p className="text-ink-soft text-[15px] leading-relaxed">
+              When we moved into development, we brought that mindset with
+              us. Every project we take on is built with clarity, simplicity,
+              and real-world usability. No bloated features, no confusing
+              dashboards, no agency-style upsells — just clean, fast,
+              effective websites that do their job.
+            </p>
 
-        <Reveal delay={2} className="mt-16 flex justify-center">
-          <a
-            href="#contact"
-            className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-display text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
-            style={{ background: "linear-gradient(100deg, #FFB84D 0%, #FF7A59 100%)" }}
-          >
-            Let's Work Together
-            <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-          </a>
-        </Reveal>
+            <p className="text-ink-soft text-[15px] leading-relaxed">
+              If you're a small business owner, you're not hiring "just a
+              coder." You're partnering with a team that understands your
+              world and builds with your customers in mind.
+            </p>
+
+            <a
+              href="#contact"
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-display text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
+              style={{ background: "linear-gradient(100deg, #FFB84D 0%, #FF7A59 100%)" }}
+            >
+              Let's Work Together
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

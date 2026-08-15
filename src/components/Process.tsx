@@ -79,7 +79,7 @@ export default function Process() {
           </div>
 
           {/* Step 5 */}
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 border border-ink-line transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
+          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber md:col-span-2 lg:col-span-1">
             <h3 className="font-display text-xl text-paper mb-3">5. Support</h3>
             <p className="text-ink-soft text-sm">
               After launch, we're available for updates, improvements, and ongoing

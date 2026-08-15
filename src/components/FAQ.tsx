@@ -1,6 +1,38 @@
+import { useState } from "react";
 import Reveal from "./Reveal";
 
+const FAQS = [
+  {
+    q: "How long does a project take?",
+    a: "Most landing pages take 3-7 days. Small business sites usually take 2-3 weeks depending on content readiness and revision rounds.",
+  },
+  {
+    q: "Do I own the site after it's built?",
+    a: "Yes — you fully own the code, design, and all exported assets. Nothing is locked behind subscriptions or proprietary builders.",
+  },
+  {
+    q: "What if I need changes after launch?",
+    a: "You can request additional updates anytime. Small fixes are quick; larger changes can be scoped as a mini-project.",
+  },
+  {
+    q: "Do you offer hosting or maintenance?",
+    a: "Hosting and domains are handled by providers like Vercel or Namecheap. We do offer ongoing maintenance, but you stay in full control.",
+  },
+  {
+    q: "What do you need from me to get started?",
+    a: "A short description of your business, your goals, any existing content, and examples of sites you like. That's enough to begin.",
+  },
+  {
+    q: "What if I don't have a logo or brand yet?",
+    a: "No problem — we can design a simple starter brand or work with neutral styling until you have a full identity.",
+  },
+];
+
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggle = (i: number) => setOpenIndex((current) => (current === i ? null : i));
+
   return (
     <section id="faq" className="grain relative overflow-hidden bg-ink py-24 md:py-32 cursor-default">
       <div
@@ -9,7 +41,7 @@ export default function FAQ() {
         style={{ background: "radial-gradient(circle, #6C63FF 0%, transparent 70%)" }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-3xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-mono text-[12px] uppercase tracking-widest text-ink-soft">
             Frequently Asked Questions
@@ -19,67 +51,53 @@ export default function FAQ() {
           </h2>
         </Reveal>
 
-        <Reveal delay={1} className="mt-16 space-y-10">
-          {/* FAQ Item */}
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              How long does a project take?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              Most landing pages take 3-7 days. Small business sites usually take
-              2-3 weeks depending on content readiness and revision rounds.
-            </p>
-          </div>
+        <Reveal delay={1} className="mt-14 divide-y divide-ink-line overflow-hidden rounded-2xl border border-ink-line bg-ink-2/40">
+          {FAQS.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div key={item.q}>
+                <button
+                  type="button"
+                  onClick={() => toggle(i)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition-colors hover:bg-ink-2/60 sm:px-8 sm:py-6"
+                >
+                  <span className="font-display text-base font-semibold text-paper sm:text-lg">
+                    {item.q}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className={`flex h-7 w-7 flex-none items-center justify-center rounded-full border border-ink-line text-ink-soft transition-all duration-300 ${
+                      isOpen ? "rotate-45 border-amber text-amber" : ""
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`grid transition-all duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-6 text-sm leading-relaxed text-ink-soft sm:px-8">
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </Reveal>
 
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              Do I own the site after it's built?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              Yes — you fully own the code, design, and all exported assets. Nothing
-              is locked behind subscriptions or proprietary builders.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              What if I need changes after launch?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              You can request additional updates anytime. Small fixes are quick;
-              larger changes can be scoped as a mini-project.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              Do you offer hosting or maintenance?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              Hosting and domains are handled by providers like Vercel or Namecheap.
-              We do offer ongoing maintanance, but you stay in full control.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              What do you need from me to get started?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              A short description of your business, your goals, any existing content,
-              and examples of sites you like. That's enough to begin.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
-            <h3 className="font-display text-xl text-paper mb-3">
-              What if I don't have a logo or brand yet?
-            </h3>
-            <p className="text-ink-soft text-sm">
-              No problem — We can design a simple starter brand or work with neutral
-              styling until you have a full identity.
-            </p>
-          </div>
+        <Reveal delay={2} className="mt-8 text-center">
+          <p className="text-sm text-ink-soft">
+            Still have questions?{" "}
+            <a href="#contact" className="font-semibold text-amber underline underline-offset-4">
+              Get in touch
+            </a>{" "}
+            — we reply within one business day.
+          </p>
         </Reveal>
       </div>
     </section>
