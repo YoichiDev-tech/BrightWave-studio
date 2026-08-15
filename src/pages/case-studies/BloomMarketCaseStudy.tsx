@@ -44,7 +44,7 @@ export default function BloomMarketCaseStudy() {
             for a boutique brand.
           </p>
 
-          <Screenshot label="Palette screenshot goes here" />
+          <Screenshot src="/images/bloom/palette.png" label="Bloom Market Palette Preview" />
         </div>
 
         {/* Typography */}
@@ -68,19 +68,22 @@ export default function BloomMarketCaseStudy() {
             “moment” rather than a rigid grid.
           </p>
 
-          <Screenshot src="/images/bloom/layout.png"  label="Bloom Market Layout Preview" />
         </div>
 
         {/* Interaction */}
         <div className="mt-16">
           <h2 className="font-display text-2xl font-semibold">Interaction & Motion</h2>
           <p className="mt-4 text-paper/70 leading-relaxed">
-            Hover effects are subtle but expressive — slight rotations, gentle
-            scaling, and soft shadows. These interactions reinforce the playful
-            brand without overwhelming the user.
+            Hover effects are subtle but expressive — gentle scaling and soft
+            shadows that bring the interface to life without overwhelming the
+            user. These micro-interactions reinforce the playful personality of
+            the brand.
           </p>
 
-          <Screenshot label="Interaction screenshot goes here" />
+          <Screenshot
+            src="/images/bloom/interaction.png"
+            label="Bloom Market Interaction Preview"
+          />
         </div>
 
       </div>
