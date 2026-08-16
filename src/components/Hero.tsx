@@ -13,12 +13,12 @@ export default function Hero({ onSelectIntent }: HeroProps) {
       {/* ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[560px] w-[560px] rounded-full opacity-30 blur-[120px]"
+        className="pointer-events-none absolute -top-40 right-0 translate-x-[35%] h-[560px] w-[560px] rounded-full opacity-30 blur-[120px]"
         style={{ background: "radial-gradient(circle, #6C63FF 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-[-10%] h-[420px] w-[420px] rounded-full opacity-20 blur-[110px]"
+        className="pointer-events-none absolute -bottom-32 left-0 -translate-x-[35%] h-[420px] w-[420px] rounded-full opacity-20 blur-[110px]"
         style={{ background: "radial-gradient(circle, #FFB84D 0%, transparent 70%)" }}
       />
 
@@ -82,7 +82,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
           </div>
         </div>
 
-        {/* Signature: animated waveform, literal read of "BrightWave" */}
+        {/* Signature: animated waveform */}
         <div className="relative flex items-center justify-center rounded-3xl border border-ink-line transition-transform hover:scale-[1.02] hover:bg-ink-2 hover:border-amber">
           <div className="relative w-full max-w-sm rounded-3xl border border-ink-line bg-ink-2/60 p-8 backdrop-blur-sm">
             <p className="font-mono text-[11px] uppercase tracking-widest text-ink-soft">Signal — live preview</p>

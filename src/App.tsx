@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import LiveChat from "./components/LiveChat";
 import BloomMarketCaseStudy from "./pages/case-studies/BloomMarketCaseStudy";
 import TypographyPreview from "./pages/TypographyPreview";
+import Lab from "./pages/Lab";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/work/bloom-market/case-study" element={<BloomMarketCaseStudy />} />
         {/* <Route path="/testimonials" element={<Testimonials />} /> */}
         <Route path="/typography-preview" element={<TypographyPreview />} />
+        <Route path="/lab" element={<Lab />} />
       </Routes>
     </>
   );
