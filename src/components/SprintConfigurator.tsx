@@ -19,9 +19,6 @@ interface AddonOption {
   description: string;
 }
 
-// Mirrors the tiers already shown in Pricing.tsx, plus the full-stack/backend
-// scopes this configurator is meant to surface
-// Keep prices in sync with Pricing.tsx if either changes
 const CORE_OPTIONS: CoreOption[] = [
   {
     id: "landing-redesign",
@@ -150,7 +147,7 @@ export default function SprintConfigurator({ onRequestScope }: SprintConfigurato
                 className={`rounded-xl border p-5 text-left transition-colors ${
                   coreId === option.id
                     ? "border-amber bg-amber/10"
-                    : "border-ink-line bg-ink-2/60 hover:border-ink-soft"
+                    : "border-ink-line bg-ink-2/60 hover:border-amber hover:bg-ink-2"
                 }`}
               >
                 <p className="font-display text-base font-semibold text-paper">{option.label}</p>
@@ -173,7 +170,9 @@ export default function SprintConfigurator({ onRequestScope }: SprintConfigurato
                   onClick={() => toggleAddon(addon.id)}
                   aria-pressed={checked}
                   className={`rounded-xl border p-5 text-left transition-colors ${
-                    checked ? "border-amber bg-amber/10" : "border-ink-line bg-ink-2/60 hover:border-ink-soft"
+                    checked
+                      ? "border-amber bg-amber/10"
+                      : "border-ink-line bg-ink-2/60 hover:border-amber hover:bg-ink-2"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -200,10 +199,10 @@ export default function SprintConfigurator({ onRequestScope }: SprintConfigurato
         </Reveal>
 
         <Reveal delay={3} className="mt-12">
-          <div className="rounded-2xl border border-ink-line bg-ink-2/60 p-8 text-center">
+          <div className="rounded-2xl border border-ink-line bg-ink-2 p-8 text-center transition-transform hover:scale-[1.02] hover:border-amber">
             <p className="font-mono text-[11px] uppercase tracking-widest text-ink-soft">Estimated investment</p>
             <p className="mt-2 font-display text-4xl font-semibold text-paper md:text-5xl">
-              ${minPrice.toLocaleString()}–${maxPrice.toLocaleString()}
+              ${minPrice.toLocaleString()}-${maxPrice.toLocaleString()}
             </p>
             <p className="mt-2 font-mono text-[13px] text-ink-soft">~{formatWeeks(totalWeeks)} turnaround</p>
 

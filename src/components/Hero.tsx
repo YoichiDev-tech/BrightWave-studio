@@ -48,7 +48,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
             <a
               href="#contact"
               onClick={() => onSelectIntent("audit")}
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-display text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-display text-sm font-semibold text-ink transition-transform hover:scale-[1.03] bg-amber"
               style={{ background: "linear-gradient(100deg, #FFB84D 0%, #FF7A59 100%)" }}
             >
               Get a Free Website Audit
