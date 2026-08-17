@@ -3,6 +3,16 @@ import type { ChangeEvent, FormEvent } from "react";
 import type { Intent } from "../pages/Home";
 import Reveal from "./Reveal";
 
+// A pending hand-off from another section (AuditWidget, SprintConfigurator)
+// that wants to pre-fill this form instead of leaving it blank
+// nonce forces the sync below to re-apply even if the same site sends the same
+// content twice in a row (e.g. re-running the audit on the same URL)
+export interface ContactPrefill {
+  message?: string;
+  siteUrl?: string;
+  nonce: number;
+}
+
 interface FormState {
   name: string;
   email: string;
@@ -37,13 +47,29 @@ const COPY: Record<Intent, { eyebrow: string; heading: string; sub: string }> = 
 interface ContactProps {
   intent: Intent | null;
   onIntentChange: (intent: Intent) => void;
+  prefill?: ContactPrefill | null;
 }
 
-export default function Contact({ intent, onIntentChange }: ContactProps) {
+export default function Contact({ intent, onIntentChange, prefill }: ContactProps) {
   const activeIntent: Intent = intent ?? "audit";
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [error, setError] = useState<string | null>(null);
+
+  // Apply a hand-off from AuditWidget/SprintConfigurator: merge in whatever
+  // fields it sent without clobbering anything the visitor already typed
+  // Done during render (React's documented pattern for syncing state from a
+  // changed prop) rather than in a useEffect, which avoids an extra
+  // render pass and the associated "setState in effect" lint warning
+  const [appliedNonce, setAppliedNonce] = useState<number | null>(null);
+  if (prefill && prefill.nonce !== appliedNonce) {
+    setAppliedNonce(prefill.nonce);
+    setForm((prev) => ({
+      ...prev,
+      message: prefill.message ?? prev.message,
+      siteUrl: prefill.siteUrl ?? prev.siteUrl,
+    }));
+  }
 
   const update = (field: keyof FormState) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));

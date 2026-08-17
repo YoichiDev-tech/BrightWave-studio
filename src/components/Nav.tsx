@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import type { Intent } from "../pages/Home";
 
+// Href starting with "/" routes via react-router (Lab is its own page)
+// Anchors ("#...") stay as in-page scroll links on the Home page
 const LINKS: { label: string; href: string; intent?: Intent }[] = [
   { label: "Services", href: "#services" },
   { label: "Build", href: "#build", intent: "build" },
   { label: "Work", href: "#work" },
+  { label: "Lab", href: "/lab" },
   { label: "Why Us", href: "#why-us" },
   { label: "Contact", href: "#contact" },
 ];
@@ -29,11 +33,16 @@ export default function Nav({ onSelectIntent }: NavProps) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/85 backdrop-blur-md border-b border-ink-line" : "bg-transparent border-b border-transparent cursor-default"
+        scrolled
+          ? "bg-ink/85 backdrop-blur-md border-b border-ink-line"
+          : "bg-transparent border-b border-transparent cursor-default"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-paper">
+        <a
+          href="#top"
+          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-paper"
+        >
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
             <path
               d="M2 15c2.5 0 2.5-6 5-6s2.5 6 5 6 2.5-6 5-6 2.5 6 5 6"
@@ -53,17 +62,28 @@ export default function Nav({ onSelectIntent }: NavProps) {
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={link.intent ? () => onSelectIntent(link.intent as Intent) : undefined}
-                className="font-mono text-[13px] uppercase tracking-wide text-ink-soft transition-colors hover:text-paper"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {LINKS.map((link) =>
+            link.href.startsWith("/") ? (
+              <li key={link.href}>
+                <Link
+                  to={link.href}
+                  className="font-mono text-[13px] uppercase tracking-wide text-ink-soft transition-colors hover:text-paper"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={link.intent ? () => onSelectIntent(link.intent as Intent) : undefined}
+                  className="font-mono text-[13px] uppercase tracking-wide text-ink-soft transition-colors hover:text-paper"
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          )}
         </ul>
 
         <a
@@ -82,10 +102,14 @@ export default function Nav({ onSelectIntent }: NavProps) {
           className="relative flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
-            className={`h-[1.5px] w-5 bg-paper transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            className={`h-[1.5px] w-5 bg-paper transition-transform duration-300 ${
+              open ? "translate-y-[3.5px] rotate-45" : ""
+            }`}
           />
           <span
-            className={`h-[1.5px] w-5 bg-paper transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            className={`h-[1.5px] w-5 bg-paper transition-transform duration-300 ${
+              open ? "-translate-y-[3.5px] -rotate-45" : ""
+            }`}
           />
         </button>
       </nav>
@@ -93,20 +117,32 @@ export default function Nav({ onSelectIntent }: NavProps) {
       {open && (
         <div className="border-t border-ink-line bg-ink px-6 pb-6 md:hidden">
           <ul className="flex flex-col gap-1 pt-4">
-            {LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => {
-                    if (link.intent) onSelectIntent(link.intent);
-                    handleLinkClick();
-                  }}
-                  className="block py-2.5 font-mono text-sm uppercase tracking-wide text-ink-soft hover:text-paper"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {LINKS.map((link) =>
+              link.href.startsWith("/") ? (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    onClick={handleLinkClick}
+                    className="block py-2.5 font-mono text-sm uppercase tracking-wide text-ink-soft hover:text-paper"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => {
+                      if (link.intent) onSelectIntent(link.intent);
+                      handleLinkClick();
+                    }}
+                    className="block py-2.5 font-mono text-sm uppercase tracking-wide text-ink-soft hover:text-paper"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
           <a
             href="#contact"

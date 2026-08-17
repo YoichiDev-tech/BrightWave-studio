@@ -17,45 +17,62 @@ This project serves as the official BrightWave Studio website. It showcases real
 real UX, real templates, and a real studio flow — giving prospects a clear sense of how I build,
 how I communicate, and what working together looks like.
 
+Beyond the marketing site itself, it's now also a working demo of what the studio can build:
+a live audit tool, an instant pricing configurator, and an open component library — not just
+copy describing the service, but the service running in the browser.
+
 ## Tech Stack
 
-- React 
+- React
 - TypeScript
 - Vite
 - Tailwind CSS
+- Supabase (planned — testimonials engine)
+- Vercel Serverless Functions
+- Resend (transactional email)
 
 ## Current Status
 
 - Fully functional demo — builds and lints clean
-- All sections implemented: Hero, Services, Portfolio, Why Choose Us,
-  Contact, Footer
+- All sections implemented: Hero, Services, Process, Pricing, Sprint Configurator,
+  Portfolio, Why Choose Us, FAQ, About, Contact, Footer
 - 3 portfolio templates are live, clickable routes (`/work/...`), each a
   full standalone landing page
-- Contact form is UI-complete but not wired to a real backend — it
-  simulates a send and shows a confirmation state
+- Contact form is wired to a real backend via Resend (`/api/send`) — actually
+  sends, not simulated
+- AI-Ready Site Audit tool is live (`/api/audit`) — fetches a visitor's site
+  server-side and scores it for real, no fake numbers
+- Sprint Configurator hands its output straight into the Contact form, pre-filled
+- The Lab (`/lab`) — a small open component showcase, copy-paste ready
 - No real client testimonials, case studies, or production assets yet —
   content is illustrative
 
 ## Live Features
 
+- AI-Ready Site Audit — instant, real heuristic scoring of any URL
+  (speed, UI/UX modernism, mobile responsiveness, AI readability)
+- Architecture & MVP Sprint Configurator — toggle-based scope + instant
+  price/timeline estimate, feeds straight into Contact
+- The Lab — public, copyable component snippets with live previews
 - Crisp live chat fully integrated and mobile-synced
 - Real-time visitor tracking via Crisp
 - Custom branded chatbox with welcome message
-- Contact form confirmation state with UX polish
+- Working contact form (Resend) with confirmation state
 - Fully responsive across mobile, tablet, and desktop
 - Production deployment on Vercel
 
 ## Next Steps
 
+- Testimonials engine (hybrid: home preview + full `/testimonials` page,
+  Supabase-backed — plan already written in `Updates.txt`)
 - Instagram Growth Showcase using the official Instagram Graph API
 - Add follower count + engagement metrics to the site
 - Create a Facebook Page and link Instagram Business account
 - Implement serverless API route for Instagram data
 - Add caching layer for stable API performance
-- Add SEO metadata
 - Add a privacy policy
 - Add analytics
-- Testimonials to get ready
+- Confirm real Threads/Instagram handles across Footer + Lab (currently placeholders)
 
 ## End-Project Considerations
 
@@ -74,21 +91,38 @@ how I communicate, and what working together looks like.
 
 ### 10/08/2026
 
-### stack
+#### stack
 - Crisp chat integration
 - Calendly scheduling
-- Suoabase
+- Supabase
 
-### current status
+#### current status
 - Crisp chat integration added
 - Calendly booking flow added
 - Planned testimonials
 - Fully responsive
 
-### live features
+#### live features
 - Pricing section added
 - FAQ section answering common questions
 - About section
+
+### 15/08/2026
+- Full code review pass
+- Fixed unconditional ReviewPopup rendering
+- Removed placeholder testimonial content ahead of the real engine
+- Added missing OG tags for social sharing
+- Hover/animation polish across static sections
+- Added social links (Threads, Instagram, GitHub) to Footer
+
+### 16/08/2026
+- Added AI-Ready Site Audit tool: real server-side fetch + honest heuristic
+  scoring (speed, UI/UX modernism, mobile, AI readability), no fabricated data
+- Added Architecture & MVP Sprint Configurator: toggle scope, instant
+  price/timeline estimate, hands off straight into Contact pre-filled
+- Added The Lab (`/lab`): open, copyable component showcase
+- Extended Contact to accept a pre-filled hand-off from either new tool
+- Added Lab link to Nav (desktop + mobile)
 
 ## Author
 

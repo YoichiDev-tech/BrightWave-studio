@@ -24,6 +24,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Removes horizontal scrollbar */
   }
 
   body {
@@ -31,6 +32,7 @@
     color: var(--color-paper);
     font-family: var(--font-body);
     font-feature-settings: "ss01" 1;
+    overflow-x: hidden; /* Ensures no overflow from children */
   }
 
   ::selection {
@@ -61,7 +63,7 @@
   }
 
   .grain {
-    position: relative;
+    position: static;
   }
   .grain::before {
     content: "";
