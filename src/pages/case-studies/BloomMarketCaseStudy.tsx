@@ -3,6 +3,7 @@ import BrowserChrome from "../../components/Badge";
 import BloomMock from "../../components/portfolioMocks/BloomMock";
 import Footer from "../../components/Footer";
 import Reveal from "../../components/Reveal";
+import Screenshot from "../../components/Screenshot";
 
 const ROUND = "'Fredoka', 'Sora', sans-serif";
 const CREAM = "#FFF3E8";
@@ -165,6 +166,10 @@ export default function BloomMarketCaseStudy() {
               exploring palette, type, layout, and the playful visual language
               behind the final template.
             </p>
+            <Screenshot
+              src="/images/bloom/hero.png"
+              label="Bloom Market Hero Section Preview"
+            />
           </Reveal>
 
           {/* Final Mock */}
