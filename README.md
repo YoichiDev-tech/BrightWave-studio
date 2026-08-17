@@ -4,7 +4,7 @@ BrightWave Studio
 
 ## Screenshot
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## Description
 
@@ -123,6 +123,14 @@ copy describing the service, but the service running in the browser.
 - Added The Lab (`/lab`): open, copyable component showcase
 - Extended Contact to accept a pre-filled hand-off from either new tool
 - Added Lab link to Nav (desktop + mobile)
+
+### 17/08/2026
+- Added new hero screenshot (/public/images/bloom/hero.png) sourced from the Bloom Market template
+- Integrated the hero screenshot into the Bloom Market case study hero section using the `<Screenshot />` component
+- Ensured layout consistency with existing case study visual sections
+- Resolved Git branch sync issues caused by empty feature branches
+- Re‑applied missing case study changes and committed them to a new feature branch
+- Successfully pushed the corrected branch and opened the PR for Issue #5
 
 ## Author
 
