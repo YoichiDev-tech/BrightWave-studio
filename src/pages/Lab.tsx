@@ -49,7 +49,10 @@ function CopyButton({ code }: { code: string }) {
       await navigator.clipboard.writeText(code);
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
-    } catch {}
+    } catch {
+      // Clipboard API can be blocked (permissions, insecure context) —
+      // failing silently is fine here, there's just nothing to confirm
+    }
   };
 
   return (
@@ -69,15 +72,15 @@ export default function Lab() {
 
   return (
     <div className="grain relative min-h-screen overflow-hidden bg-ink text-paper">
-      {/* ambient glow */}
+      
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-0 translate-x-[35%] h-[560px] w-[560px] rounded-full opacity-30 blur-[120px]"
+        className="pointer-events-none absolute -top-40 right-0 translate-x-[35%] h-[560px] w-[560px] rounded-full opacity-20 blur-[130px]"
         style={{ background: "radial-gradient(circle, #6C63FF 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-0 -translate-x-[35%] h-[420px] w-[420px] rounded-full opacity-20 blur-[110px]"
+        className="pointer-events-none absolute -bottom-32 left-0 -translate-x-[35%] h-[420px] w-[420px] rounded-full opacity-10 blur-[130px]"
         style={{ background: "radial-gradient(circle, #FFB84D 0%, transparent 70%)" }}
       />
 
@@ -133,7 +136,6 @@ export default function Lab() {
                       <h2 className="font-display text-xl font-semibold text-paper">{item.title}</h2>
                       <p className="mt-1.5 max-w-md text-sm text-ink-soft">{item.description}</p>
                     </div>
-                    <CopyButton code={item.code} />
                   </div>
 
                   {/* Live preview */}

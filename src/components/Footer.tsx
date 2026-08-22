@@ -52,7 +52,10 @@ const SOCIALS: { label: string; href: string; icon: ReactNode }[] = [
 export default function Footer() {
   return (
     <footer className="border-t border-ink-line bg-ink cursor-default">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+      <div
+        className="mx-auto max-w-6xl px-6 py-14"
+        style={{ paddingBottom: "max(3.5rem, env(safe-area-inset-bottom))" }}
+      >
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
             <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-semibold text-paper">
@@ -97,7 +100,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex gap-16">
+          <div className="flex gap-10 sm:gap-16">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-widest text-ink-soft">Menu</p>
               <ul className="mt-4 space-y-2.5">

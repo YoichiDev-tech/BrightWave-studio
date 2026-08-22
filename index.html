@@ -1,9 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Inline fallback background: guarantees the page never flashes white
+         on first paint (e.g. slow connections) before the stylesheet loads,
+         matching the --color-ink token in src/index.css -->
+    <style>
+      html, body { background-color: #0a0e1a; }
+    </style>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="BrightWave Studio designs and builds fast, modern, conversion-focused websites for small businesses — from landing pages to full redesigns." />
     <meta name="theme-color" content="#0A0E1A" />
 

@@ -10,15 +10,15 @@ export default function Hero({ onSelectIntent }: HeroProps) {
       id="top"
       className="grain relative overflow-hidden bg-ink pb-24 pt-36 md:pb-32 md:pt-44 cursor-default"
     >
-      {/* ambient glow */}
+
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-0 translate-x-[35%] h-[560px] w-[560px] rounded-full opacity-30 blur-[120px]"
+        className="pointer-events-none absolute -top-40 right-0 translate-x-[35%] h-[560px] w-[560px] rounded-full opacity-20 blur-[130px]"
         style={{ background: "radial-gradient(circle, #6C63FF 0%, transparent 70%)" }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-0 -translate-x-[35%] h-[420px] w-[420px] rounded-full opacity-20 blur-[110px]"
+        className="pointer-events-none absolute -bottom-32 left-0 -translate-x-[35%] h-[420px] w-[420px] rounded-full opacity-10 blur-[130px]"
         style={{ background: "radial-gradient(circle, #FFB84D 0%, transparent 70%)" }}
       />
 
@@ -32,7 +32,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
             Now booking Q3 projects
           </p>
 
-          <h1 className="font-display text-[13vw] font-semibold leading-[1.02] tracking-tight text-paper sm:text-6xl md:text-[4.2rem]">
+          <h1 className="font-display text-[clamp(2.2rem,9vw,3.4rem)] font-semibold leading-[1.05] tracking-tight text-paper sm:text-6xl md:text-[4.2rem]">
             Websites that carry
             <br />
             your business <span className="text-gradient">further.</span>

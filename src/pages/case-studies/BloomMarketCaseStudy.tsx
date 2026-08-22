@@ -3,7 +3,6 @@ import BrowserChrome from "../../components/Badge";
 import BloomMock from "../../components/portfolioMocks/BloomMock";
 import Footer from "../../components/Footer";
 import Reveal from "../../components/Reveal";
-import Screenshot from "../../components/Screenshot";
 
 const ROUND = "'Fredoka', 'Sora', sans-serif";
 const CREAM = "#FFF3E8";
@@ -136,6 +135,56 @@ function InteractionDemo() {
   );
 }
 
+function LiveHeroPreview() {
+  return (
+    <div className="mt-8 overflow-hidden rounded-2xl border border-ink-line">
+      <div className="relative overflow-hidden px-6 py-14 sm:px-10 sm:py-16" style={{ background: CREAM, color: PLUM }}>
+        <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rotate-12 rounded-[45%]" style={{ background: PINK, opacity: 0.9 }} />
+        <div aria-hidden="true" className="absolute -bottom-10 -left-10 h-32 w-32 -rotate-6 rounded-[45%]" style={{ background: YELLOW, opacity: 0.85 }} />
+
+        <div className="relative">
+          <p
+            className="inline-block rounded-full px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wide"
+            style={{ background: PLUM, color: CREAM, fontFamily: ROUND }}
+          >
+            New drop every Friday
+          </p>
+          <h3
+            className="mt-5 max-w-sm text-3xl font-bold leading-[0.98] sm:text-4xl"
+            style={{ fontFamily: ROUND }}
+          >
+            Fresh blooms, no green thumb required.
+          </h3>
+          <p className="mt-4 max-w-xs text-sm" style={{ opacity: 0.75 }}>
+            Hand-tied bouquets and easy-care plants, dropped off on your
+            porch every week.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span
+              className="rounded-full px-5 py-2.5 text-xs font-bold"
+              style={{ background: PINK, color: PLUM, fontFamily: ROUND }}
+            >
+              Shop the drop
+            </span>
+            <span
+              className="rounded-full border-2 px-5 py-2.5 text-xs font-bold"
+              style={{ borderColor: PLUM, fontFamily: ROUND }}
+            >
+              Start a subscription
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center justify-between bg-ink-2/60 px-6 py-3 font-mono text-[10px] uppercase tracking-wide text-paper/40">
+        <span>Live recreation — not a static image</span>
+        <Link to="/work/bloom-market#top" className="underline underline-offset-4 hover:text-paper/70">
+          View the real hero &rarr;
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default function BloomMarketCaseStudy() {
   return (
     <div className="bg-ink cursor-default">
@@ -166,10 +215,7 @@ export default function BloomMarketCaseStudy() {
               exploring palette, type, layout, and the playful visual language
               behind the final template.
             </p>
-            <Screenshot
-              src="/images/bloom/hero.png"
-              label="Bloom Market Hero Section Preview"
-            />
+            <LiveHeroPreview />
           </Reveal>
 
           {/* Final Mock */}

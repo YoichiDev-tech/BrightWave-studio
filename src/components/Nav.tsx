@@ -32,6 +32,7 @@ export default function Nav({ onSelectIntent }: NavProps) {
 
   return (
     <header
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
           ? "bg-ink/85 backdrop-blur-md border-b border-ink-line"
@@ -99,7 +100,8 @@ export default function Nav({ onSelectIntent }: NavProps) {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="relative flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          aria-controls="mobile-menu"
+          className="relative -mr-2.5 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
             className={`h-[1.5px] w-5 bg-paper transition-transform duration-300 ${
@@ -115,7 +117,11 @@ export default function Nav({ onSelectIntent }: NavProps) {
       </nav>
 
       {open && (
-        <div className="border-t border-ink-line bg-ink px-6 pb-6 md:hidden">
+        <div
+          id="mobile-menu"
+          className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-ink-line bg-ink px-6 pb-6 md:hidden"
+          style={{ paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}
+        >
           <ul className="flex flex-col gap-1 pt-4">
             {LINKS.map((link) =>
               link.href.startsWith("/") ? (

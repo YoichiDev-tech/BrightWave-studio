@@ -145,3 +145,20 @@
 .marquee-track {
   animation: marquee 22s linear infinite;
 }
+
+/* Brand reel — animated signal panel */
+@keyframes reel-bar {
+  0%, 100% { transform: scaleY(var(--bar-min, 0.25)); }
+  50% { transform: scaleY(var(--bar-max, 1)); }
+}
+.reel-bar {
+  animation: reel-bar 2.6s ease-in-out infinite;
+  transform-origin: bottom;
+}
+@keyframes reel-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.reel-spin {
+  animation: reel-spin 14s linear infinite;
+}
