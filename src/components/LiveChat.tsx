@@ -17,6 +17,8 @@ export default function LiveChat() {
 
     Crisp.configure(CRISP_WEBSITE_ID);
 
+    Crisp.chat.show();
+
     // Feed real chat engagement into the same interaction stream that
     // pageviews and form submits go into, so the ops dashboard reports
     // reflect chat activity too
