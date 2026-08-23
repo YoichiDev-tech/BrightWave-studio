@@ -48,13 +48,6 @@
     max-width: 100vw;
   }
 
-  /* Crisp injects this as a direct child of <body>. Cap its width so it
-     can never itself become the thing that makes the page wider than the
-     viewport */
-  #crisp-client {
-    max-width: 100vw !important;
-  }
-
   ::selection {
     background: var(--color-amber);
     color: var(--color-ink);
