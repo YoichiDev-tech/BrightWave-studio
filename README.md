@@ -27,7 +27,7 @@ copy describing the service, but the service running in the browser.
 - TypeScript
 - Vite
 - Tailwind CSS
-- Supabase (planned — testimonials engine)
+- Supabase (live — interaction tracking; testimonials engine still planned)
 - Vercel Serverless Functions
 - Resend (transactional email)
 
@@ -46,6 +46,12 @@ copy describing the service, but the service running in the browser.
 - The Lab (`/lab`) — a small open component showcase, copy-paste ready
 - No real client testimonials, case studies, or production assets yet —
   content is illustrative
+- Fixed a layout bug where the Crisp chat integration was letting the whole
+  page drag sideways to reveal the chat icon — page is locked to vertical
+  scroll only now
+- Every visit and every meaningful action (contact submit, audit run, chat
+  opened/messaged) now gets logged to Supabase via `/api/track` — feeds a
+  separate private ops dashboard, not visible anywhere on this site
 
 ## Live Features
 
@@ -58,6 +64,9 @@ copy describing the service, but the service running in the browser.
 - Real-time visitor tracking via Crisp
 - Custom branded chatbox with welcome message
 - Working contact form (Resend) with confirmation state
+- Interaction tracking (pageviews + key actions) piped server-side into
+  Supabase, no client-side keys involved — powers a separate private
+  ops dashboard
 - Fully responsive across mobile, tablet, and desktop
 - Production deployment on Vercel
 
@@ -72,6 +81,10 @@ copy describing the service, but the service running in the browser.
 - Add caching layer for stable API performance
 - Add a privacy policy
 - Add analytics
+- Build the actual "agent runs the outreach" job — the ops dashboard
+  (separate project, `brightwave-ops`) already has the drafting +
+  approval queue; still need the cron job that finds leads and the
+  send-on-approval step
 - Confirm real Threads/Instagram handles across Footer + Lab (currently placeholders)
 
 ## End-Project Considerations
@@ -131,6 +144,25 @@ copy describing the service, but the service running in the browser.
 - Resolved Git branch sync issues caused by empty feature branches
 - Re‑applied missing case study changes and committed them to a new feature branch
 - Successfully pushed the corrected branch and opened the PR for Issue #5
+
+### 23/08/2026
+- Fixed the horizontal-scroll bug introduced by the Crisp chat integration
+  (`overflow-x: hidden` was quietly letting the page get dragged sideways
+  on touch/trackpad — swapped for `overflow-x: clip`, which removes the
+  scrollable region instead of just hiding its scrollbar)
+- Wired up Crisp's `onChatOpened` / `onMessageSent` events instead of just
+  configuring the widget and walking away
+- Built the interaction tracking pipeline: `interaction_events` table in
+  Supabase, `/api/track` (server-side write, service-role key never
+  touches the client), `src/lib/track.ts` + `usePageTracking` on the
+  client side
+- Tracking now fires on: every route change, contact form submit, audit
+  run + audit completed, chat opened, chat message sent
+- Kicked off `brightwave-ops` — a fully separate, unlinked project (own
+  repo, own Vercel deployment, own Supabase project) that reads this
+  tracking data and shows three report windows (morning/evening/night)
+  plus an AI-drafted outreach approval queue. Nothing about it lives in
+  this repo on purpose — see that project's own README for why
 
 ## Author
 

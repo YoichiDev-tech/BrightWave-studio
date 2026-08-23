@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import type { Intent } from "../pages/Home";
 import Reveal from "./Reveal";
+import { trackAction } from "../lib/track";
 
 // A pending hand-off from another section (AuditWidget, SprintConfigurator)
 // that wants to pre-fill this form instead of leaving it blank
@@ -105,6 +106,7 @@ export default function Contact({ intent, onIntentChange, prefill }: ContactProp
         return;
       }
 
+      trackAction("contact_submitted", { intent: activeIntent });
       setStatus("sent");
       setForm(EMPTY_FORM);
     } catch {

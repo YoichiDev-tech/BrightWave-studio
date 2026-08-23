@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Crisp } from "crisp-sdk-web";
+import { trackAction } from "../lib/track";
 
 const CRISP_WEBSITE_ID = import.meta.env.VITE_CRISP_WEBSITE_ID as
   | string
@@ -15,6 +16,16 @@ export default function LiveChat() {
     }
 
     Crisp.configure(CRISP_WEBSITE_ID);
+
+    // Feed real chat engagement into the same interaction stream that
+    // pageviews and form submits go into, so the ops dashboard reports
+    // reflect chat activity too
+    Crisp.chat.onChatOpened(() => {
+      trackAction("chat_opened");
+    });
+    Crisp.message.onMessageSent(() => {
+      trackAction("chat_message_sent");
+    });
   }, []);
 
   return null;

@@ -5,6 +5,7 @@ import ScoreGauge from "./ScoreGauge";
 import { scoreAudit } from "../lib/auditScoring";
 import type { AuditResult } from "../lib/auditScoring";
 import type { AuditSignals } from "../types/audit";
+import { trackAction } from "../lib/track";
 
 interface AuditWidgetProps {
   // Lets a "See my results" CTA hand off straight into the Contact form,
@@ -31,6 +32,7 @@ export default function AuditWidget({ onRequestFullTeardown }: AuditWidgetProps)
     setStatus("loading");
     setError(null);
     setResult(null);
+    trackAction("audit_run", { intent: "audit" });
 
     try {
       const res = await fetch("/api/audit", {
@@ -50,6 +52,7 @@ export default function AuditWidget({ onRequestFullTeardown }: AuditWidgetProps)
       setSignals(data.signals);
       setResult(scoreAudit(data.signals));
       setStatus("done");
+      trackAction("audit_completed", { intent: "audit" });
     } catch {
       setError("Couldn't reach the audit service. Check your connection and try again.");
       setStatus("error");

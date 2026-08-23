@@ -24,7 +24,8 @@
 
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Removes horizontal scrollbar */
+    overflow-x: clip; /* Hard-blocks horizontal scroll */
+    max-width: 100vw;
   }
 
   body {
@@ -32,7 +33,9 @@
     color: var(--color-paper);
     font-family: var(--font-body);
     font-feature-settings: "ss01" 1;
-    overflow-x: hidden; /* Ensures no overflow from children */
+    overflow-x: clip; /* Hard-blocks horizontal scroll */
+    max-width: 100vw;
+    overscroll-behavior-x: none;
   }
 
   ::selection {
