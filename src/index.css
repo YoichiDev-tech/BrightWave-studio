@@ -24,10 +24,15 @@
 
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;   /* fallback for browsers without overflow-x: clip support */
-    overflow-x: clip;     /* removes the horizontal scroll region entirely */
-    max-width: 100vw;
-    touch-action: pan-y;  /* tells touchscreens to only honor vertical swipes */
+    /* touch-action is the actual fix for the sideways-swipe bug: it works
+       at the browser's gesture-recognition level, not by creating a clipped
+       scroll box. Deliberately NOT using overflow-x: hidden/clip here — on
+       mobile Safari, position: fixed elements (Crisp's chat bubble, any
+       future floating UI) can get incorrectly clipped/hidden when an
+       ancestor has overflow: hidden/clip set, even though position: fixed
+       is meant to ignore ancestor overflow. That's what silently broke the
+       chat widget on mobile. touch-action has no such side effect */
+    touch-action: pan-y;
     overscroll-behavior-x: none;
   }
 
@@ -36,16 +41,8 @@
     color: var(--color-paper);
     font-family: var(--font-body);
     font-feature-settings: "ss01" 1;
-    overflow-x: hidden;
-    overflow-x: clip;
-    max-width: 100vw;
     touch-action: pan-y;
     overscroll-behavior-x: none;
-  }
-
-  #root {
-    overflow-x: clip;
-    max-width: 100vw;
   }
 
   ::selection {
