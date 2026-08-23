@@ -6,15 +6,20 @@ import BloomMarket from "./pages/templates/BloomMarket";
 import ScrollToTop from "./components/ScrollToTop";
 // import Testimonials from "./pages/Testimonials"; // re-enable once there are real testimonials to show
 import LiveChat from "./components/LiveChat";
+import ChatFallback from "./components/ChatFallback";
 import BloomMarketCaseStudy from "./pages/case-studies/BloomMarketCaseStudy";
 import TypographyPreview from "./pages/TypographyPreview";
 import Lab from "./pages/Lab";
+import usePageTracking from "./hooks/usePageTracking";
 
 export default function App() {
+  usePageTracking();
+
   return (
     <>
       <ScrollToTop />
       <LiveChat />
+      <ChatFallback />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/fielding-and-rye" element={<FieldingRye />} />
