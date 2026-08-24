@@ -172,3 +172,8 @@
 .reel-spin {
   animation: reel-spin 14s linear infinite;
 }
+
+/* CRISP BUBBLE FIX — REQUIRED FOR MOBILE */
+.crisp-client {
+  z-index: 999999 !important;
+}
