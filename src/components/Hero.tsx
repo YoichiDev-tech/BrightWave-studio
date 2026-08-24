@@ -8,7 +8,7 @@ export default function Hero({ onSelectIntent }: HeroProps) {
   return (
     <section
       id="top"
-      className="grain relative overflow-hidden bg-ink pb-24 pt-36 md:pb-32 md:pt-44 cursor-default"
+      className="grain relative overflow-x-hidden bg-ink pb-24 pt-36 md:pb-32 md:pt-44 cursor-default"
     >
 
       <div
