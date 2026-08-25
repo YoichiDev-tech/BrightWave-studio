@@ -38,7 +38,7 @@ export default function NovaCloud() {
             <li>Docs</li>
             <li>Changelog</li>
           </ul>
-          
+          <a
             href="#pricing"
             className="rounded-md px-4 py-2 text-[13px] font-medium"
             style={{ background: MINT, color: "#04211C" }}
@@ -74,7 +74,10 @@ export default function NovaCloud() {
               notice.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#pricing" className="rounded-md px-5 py-3 text-sm font-semibold" style={{ background: MINT, color: "#04211C" }}>
+              <a 
+                href="#pricing" 
+                className="rounded-md px-5 py-3 text-sm font-semibold" 
+                style={{ background: MINT, color: "#04211C" }}>
                 Start free trial
               </a>
               <a href="#features" className="rounded-md border px-5 py-3 text-sm font-semibold text-white/80" style={{ borderColor: LINE }}>
