@@ -7,7 +7,7 @@ export default function TestimonialsPreview() {
     <section className="py-20 bg-[#0f0f11] text-white cursor-default">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-semibold mb-8">
-          What people say about BrightWave
+          What people say about PrismWave
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6">

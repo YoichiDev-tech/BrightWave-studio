@@ -86,7 +86,7 @@ export default function Pricing() {
 
         <Reveal delay={2} className="mt-16 flex justify-center">
           <a
-            href="https://calendly.com/hello-brightwave-studio/15min"
+            href="https://calendly.com/hello-prismwave-studio/15min"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-display text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"

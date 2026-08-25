@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-16 md:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <p className="font-mono text-[12px] uppercase tracking-widest text-ink-soft">Why BrightWave</p>
+            <p className="font-mono text-[12px] uppercase tracking-widest text-ink-soft">Why PrismWave</p>
             <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-paper md:text-[2.75rem]">
               Built to a standard, not a shortcut.
             </h2>

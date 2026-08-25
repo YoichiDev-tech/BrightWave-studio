@@ -59,7 +59,7 @@ export default function Nav({ onSelectIntent }: NavProps) {
               </linearGradient>
             </defs>
           </svg>
-          BrightWave
+          PrismWave
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

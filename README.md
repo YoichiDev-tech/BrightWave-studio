@@ -1,6 +1,6 @@
 # Title
 
-BrightWave Studio
+PrismWave Studio
 
 ## Screenshot
 
@@ -13,7 +13,7 @@ Designed to show new/small/medium-sized business owners what a fast, handcrafted
 
 ## Project Purpose
 
-This project serves as the official BrightWave Studio website. It showcases real sections,
+This project serves as the official PrismWave Studio website. It showcases real sections,
 real UX, real templates, and a real studio flow — giving prospects a clear sense of how I build,
 how I communicate, and what working together looks like.
 
@@ -82,14 +82,14 @@ copy describing the service, but the service running in the browser.
 - Add a privacy policy
 - Add analytics
 - Build the actual "agent runs the outreach" job — the ops dashboard
-  (separate project, `brightwave-ops`) already has the drafting +
+  (separate project, `prismwave-ops`) already has the drafting +
   approval queue; still need the cron job that finds leads and the
   send-on-approval step
 - Confirm real Threads/Instagram handles across Footer + Lab (currently placeholders)
 
 ## End-Project Considerations
 
-- Buy `brightwavestudio.com` and set up `hello@` on it
+- Buy `prismwavestudio.com` and set up `hello@` on it
 - Add analytics before driving traffic to it
 - Revisit copy once there's a first real client project to reference
 
@@ -158,7 +158,7 @@ copy describing the service, but the service running in the browser.
   client side
 - Tracking now fires on: every route change, contact form submit, audit
   run + audit completed, chat opened, chat message sent
-- Kicked off `brightwave-ops` — a fully separate, unlinked project (own
+- Kicked off `prismwave-ops` — a fully separate, unlinked project (own
   repo, own Vercel deployment, own Supabase project) that reads this
   tracking data and shows three report windows (morning/evening/night)
   plus an AI-drafted outreach approval queue. Nothing about it lives in

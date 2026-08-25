@@ -48,7 +48,7 @@ function isTrackPayload(data: unknown): data is TrackPayload {
 // Salted hash so we can spot abusive bursts from one IP without ever storing
 // a raw IP address. Rotate SESSION_HASH_SALT periodically if you want old
 // hashes to stop correlating with new ones
-const SALT = process.env.SESSION_HASH_SALT ?? "brightwave-fallback-salt";
+const SALT = process.env.SESSION_HASH_SALT ?? "prismwave-fallback-salt";
 
 function hashIp(ip: string): string {
   return createHash("sha256").update(`${SALT}:${ip}`).digest("hex").slice(0, 32);

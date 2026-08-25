@@ -10,7 +10,7 @@ export default function ReviewPopup({ onClose }: { onClose: () => void }) {
         <h2 className="text-2xl font-semibold mb-4">Leave a Review</h2>
 
         <p className="text-white/70 mb-4">
-          How was your experience with BrightWave?
+          How was your experience with PrismWave?
         </p>
 
         <div className="flex gap-2 mb-4">

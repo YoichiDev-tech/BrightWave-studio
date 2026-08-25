@@ -94,7 +94,7 @@ Starting point - Design the home page testimonial preview
 
 Layout (card layout)
 - audit testimonial = someone who has an improved existing site mentioned clarity, speed and modern design
-- build testimonial = someone who had an idea and BrightWave-studio built it mentioned smooth process and custom design
+- build testimonial = someone who had an idea and PrismWave-studio built it mentioned smooth process and custom design
 - general praise = fast communication, professionalism, reliability
 - CTA under the section = a small link saying "See all testimonials =>"
 
@@ -194,7 +194,7 @@ Starting point - Design the home page testimonial preview
 
 Layout (card layout)
 - audit testimonial = someone who has an improved existing site mentioned clarity, speed and modern design
-- build testimonial = someone who had an idea and BrightWave-studio built it mentioned smooth process and custom design
+- build testimonial = someone who had an idea and PrismWave-studio built it mentioned smooth process and custom design
 - general praise = fast communication, professionalism, reliability
 - CTA under the section = a small link saying "See all testimonials =>"
 
@@ -244,7 +244,7 @@ just means I didn't put a link to it anywhere, not that it's actually invisible.
 Anyone poking at devtools could find it. A separate project means none of that code,
 and none of its secrets, are anywhere near what a visitor's browser ever downloads.
 
-So started brightwave-ops. Own repo, own Vercel project, own Supabase project even
+So started prismwave-ops. Own repo, own Vercel project, own Supabase project even
 (so a leak in one doesn't touch the other). What's in it so far:
 - login (just me, magic link, plus a server-side allowlist check so even a leaked
   login link to someone else can't actually see data)

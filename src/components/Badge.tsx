@@ -37,7 +37,7 @@ export function BackToStudioBadge({ tone = "dark" }: TemplateChromeProps) {
       }`}
     >
       <span aria-hidden="true">&larr;</span>
-      BrightWave Studio
+      PrismWave Studio
     </Link>
   );
 }

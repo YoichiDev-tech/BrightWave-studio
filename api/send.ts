@@ -3,12 +3,12 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Where inquiries land. Override with a CONTACT_TO_EMAIL env var if needed.
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "hello@brightwavestudio.com";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "hello@prismwavestudio.com";
 
 // Must be an address on a domain you've verified in Resend
 // Until a domain is verified, Resend's shared onboarding@resend.dev
 // address works for testing (delivery limits apply — see Resend's docs).
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "BrightWave Studio <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? "PrismWave Studio <onboarding@resend.dev>";
 
 type Intent = "audit" | "build";
 

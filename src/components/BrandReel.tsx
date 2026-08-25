@@ -43,7 +43,7 @@ export default function BrandReel({ className = "" }: BrandReelProps) {
               </linearGradient>
             </defs>
           </svg>
-          BrightWave
+          PrismWave
         </div>
 
         {/* Equalizer / signal bars */}

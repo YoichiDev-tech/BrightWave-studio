@@ -26,7 +26,7 @@ export default function Calendly() {
         <Reveal delay={1} className="mt-16 flex justify-center">
           <div className="w-full max-w-3xl rounded-2xl border border-ink-line bg-ink-2/60 p-6">
             <iframe
-              src="https://calendly.com/hello-brightwave-studio/new-meeting"
+              src="https://calendly.com/hello-prismwave-studio/new-meeting"
               className="w-full h-[600px] rounded-xl border border-ink-line"
               loading="lazy"
             />

@@ -49,7 +49,7 @@ export default function About() {
 
           <Reveal delay={2} className="space-y-6">
             <p className="text-ink-soft text-[15px] leading-relaxed">
-              We're BrightWave Studio — a small, focused team with roots in
+              We're PrismWave Studio — a small, focused team with roots in
               hospitality and service-based businesses. Before stepping into
               development, we spent years working directly with customers,
               solving real problems in real environments. That experience

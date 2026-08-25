@@ -95,7 +95,7 @@ export default async function handler(req: VercelLikeRequest, res: VercelLikeRes
       redirect: "follow",
       headers: {
         // Identify ourselves honestly — this is a one-off audit fetch, not a crawler
-        "User-Agent": "BrightWaveStudio-AuditBot/1.0 (+https://brightwavestudio.com)",
+        "User-Agent": "PrismWaveStudio-AuditBot/1.0 (+https://prismwavestudio.com)",
       },
     });
     const responseTimeMs = Date.now() - started;

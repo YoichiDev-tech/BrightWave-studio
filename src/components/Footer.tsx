@@ -62,7 +62,7 @@ export default function Footer() {
                   </linearGradient>
                 </defs>
               </svg>
-              BrightWave
+              PrismWave
             </a>
             <p className="mt-3 max-w-xs text-sm text-ink-soft">
               Websites for small businesses that want to look — and load — as
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-ink-line pt-6 font-mono text-[11px] uppercase tracking-wide text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} BrightWave Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PrismWave Studio. All rights reserved.</p>
           <p>Designed &amp; built in-house.</p>
         </div>
       </div>
