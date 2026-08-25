@@ -23,10 +23,10 @@ export default function LiveChat() {
     // pageviews and form submits go into, so the ops dashboard reports
     // reflect chat activity too
     Crisp.chat.onChatOpened(() => {
-      trackAction("chat_opened");
+      // trackAction("chat_opened");
     });
     Crisp.message.onMessageSent(() => {
-      trackAction("chat_message_sent");
+      // trackAction("chat_message_sent");
     });
   }, []);
 

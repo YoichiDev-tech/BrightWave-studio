@@ -9,10 +9,10 @@ import LiveChat from "./components/LiveChat";
 import BloomMarketCaseStudy from "./pages/case-studies/BloomMarketCaseStudy";
 import TypographyPreview from "./pages/TypographyPreview";
 import Lab from "./pages/Lab";
-import usePageTracking from "./hooks/usePageTracking";
+// import usePageTracking from "./hooks/usePageTracking";
 
 export default function App() {
-  usePageTracking();
+  // usePageTracking();
 
   return (
     <>
