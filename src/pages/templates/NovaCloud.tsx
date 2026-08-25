@@ -38,7 +38,7 @@ export default function NovaCloud() {
             <li>Docs</li>
             <li>Changelog</li>
           </ul>
-          <a
+          
             href="#pricing"
             className="rounded-md px-4 py-2 text-[13px] font-medium"
             style={{ background: MINT, color: "#04211C" }}
@@ -52,7 +52,7 @@ export default function NovaCloud() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-20 blur-[110px]"
+          className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-20 blur-[110px] will-change-transform transform-gpu"
           style={{ background: MINT }}
         />
         <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-2 md:items-center">
@@ -219,7 +219,7 @@ export default function NovaCloud() {
         >
           <span>© {new Date().getFullYear()} nova_cloud</span>
           <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
-            Template preview by BrightWave Studio
+            Template preview by PrismWave Studio
           </Link>
         </div>
       </footer>

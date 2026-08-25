@@ -37,7 +37,7 @@ export default function FAQ() {
     <section id="faq" className="grain relative overflow-hidden bg-ink py-24 md:py-32 cursor-default">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[720px] -translate-x-1/2 rounded-full opacity-20 blur-[130px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[720px] -translate-x-1/2 rounded-full opacity-20 blur-[130px] will-change-transform transform-gpu"
         style={{ background: "radial-gradient(circle, #6C63FF 0%, transparent 70%)" }}
       />
 

@@ -7,7 +7,7 @@ export const testimonials: Testimonial[] = [
     company: "Retail Owner",
     rating: 5,
     message:
-      "BrightWave's audit showed issues I didn't even know were hurting conversions. The redesign made my site feel modern again.",
+      "PrismWave's audit showed issues I didn't even know were hurting conversions. The redesign made my site feel modern again.",
     intent: "audit",
     createdAt: "2026-01-12",
     approved: true,
@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
     company: "Creator",
     rating: 5,
     message:
-      "I had an idea for an anime ranking site. BrightWave built it exactly how I imagined — fast, clean, and unique.",
+      "I had an idea for an anime ranking site. PrismWave built it exactly how I imagined — fast, clean, and unique.",
     intent: "build",
     createdAt: "2026-02-03",
     approved: true,

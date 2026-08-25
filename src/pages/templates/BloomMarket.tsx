@@ -85,6 +85,7 @@ export default function BloomMarket() {
             every week. Cancel or pause anytime.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
+            
             <a
               href="#shop"
               className="rounded-full px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
@@ -92,6 +93,7 @@ export default function BloomMarket() {
             >
               Shop the drop
             </a>
+            
             <a
               href="#subscribe"
               className="rounded-full border-2 px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:scale-105 hover:shadow-xl"
@@ -189,7 +191,7 @@ export default function BloomMarket() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 text-xs font-semibold uppercase tracking-wide sm:flex-row sm:items-center sm:justify-between" style={{ opacity: 0.6 }}>
           <span>© {new Date().getFullYear()} Bloom Market</span>
           <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
-            Template preview by BrightWave Studio
+            Template preview by PrismWave Studio
           </Link>
         </div>
       </footer>

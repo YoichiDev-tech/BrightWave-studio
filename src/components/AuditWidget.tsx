@@ -63,7 +63,7 @@ export default function AuditWidget({ onRequestFullTeardown }: AuditWidgetProps)
     <section id="audit-tool" className="grain relative overflow-hidden bg-ink py-24 md:py-32 cursor-default">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-1/2 top-0 h-[420px] w-[640px] translate-x-1/2 rounded-full opacity-20 blur-[130px]"
+        className="pointer-events-none absolute right-1/2 top-0 h-[420px] w-[640px] translate-x-1/2 rounded-full opacity-20 blur-[130px] will-change-transform transform-gpu"
         style={{ background: "radial-gradient(circle, #FF7A59 0%, transparent 70%)" }}
       />
 

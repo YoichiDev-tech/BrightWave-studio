@@ -208,7 +208,7 @@ export default function FieldingRye() {
         <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 text-[11px] uppercase tracking-widest sm:flex-row sm:items-center sm:justify-between" style={{ opacity: 0.5 }}>
           <span>© {new Date().getFullYear()} Fielding &amp; Rye</span>
           <Link to="/" className="underline underline-offset-4 transition-opacity hover:opacity-70">
-            Template preview by BrightWave Studio
+            Template preview by PrismWave Studio
           </Link>
         </div>
       </footer>

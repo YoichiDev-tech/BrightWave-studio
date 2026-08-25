@@ -30,6 +30,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>PrismWave Studio — Websites that carry your business further</title>
+
+    <!-- Live chat (Crisp) — loaded here directly, in parallel with the app
+         bundle, instead of via a React useEffect. Waiting for React to
+         mount, hydrate, and run its effects before even starting to fetch
+         the Crisp script is what caused the bubble to appear several
+         seconds after the rest of the page. src/components/LiveChat.tsx
+         still runs on mount, but crisp-sdk-web detects this script already
+         loaded (window.$crisp.is) and skips re-injecting it — so this is
+         safe and doesn't double-load anything. -->
+    <link rel="preconnect" href="https://client.crisp.chat" />
+    <link rel="preconnect" href="https://settings.crisp.chat" crossorigin />
+    <script type="text/javascript">
+      (function () {
+        var websiteId = "%VITE_CRISP_WEBSITE_ID%";
+        // If Vite couldn't resolve the placeholder (env var missing at
+        // build time — e.g. local/preview builds), skip early-loading and
+        // let src/components/LiveChat.tsx load it the old way instead.
+        if (!websiteId || websiteId.charAt(0) === "%") return;
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = websiteId;
+        var d = document;
+        var s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

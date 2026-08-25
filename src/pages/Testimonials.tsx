@@ -19,7 +19,7 @@ export default function TestimonialsPage() {
         </h1>
 
         <p className="text-white/70 mb-10">
-          BrightWave helps two types of people: those improving an existing site,
+          PrismWave helps two types of people: those improving an existing site,
           and those building something new. Here's what they say about working
           with us.
         </p>
