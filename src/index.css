@@ -174,11 +174,6 @@
 }
 
 /* CRISP BUBBLE FIX — REQUIRED FOR MOBILE */
-.crisp-client { 
-  position: fixed !important; 
-  bottom: 0 !important; 
-  right: 0 !important; 
-  height: auto !important; 
-  width: auto !important; 
+.crisp-client {
   z-index: 999999 !important;
 }
