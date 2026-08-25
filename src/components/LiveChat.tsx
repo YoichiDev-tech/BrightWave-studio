@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Crisp } from "crisp-sdk-web";
-import { trackAction } from "../lib/track";
 
 const CRISP_WEBSITE_ID = import.meta.env.VITE_CRISP_WEBSITE_ID as
   | string
