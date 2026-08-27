@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 // import Testimonials from "./pages/Testimonials"; // re-enable once there are real testimonials to show
 import LiveChat from "./components/LiveChat";
 import BloomMarketCaseStudy from "./pages/case-studies/BloomMarketCaseStudy";
+import ServeSyncCaseStudy from "./pages/case-studies/ServeSyncCaseStudy";
 import TypographyPreview from "./pages/TypographyPreview";
 import Lab from "./pages/Lab";
 // import usePageTracking from "./hooks/usePageTracking";
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/work/bloom-market" element={<BloomMarket />} />
 
         <Route path="/work/bloom-market/case-study" element={<BloomMarketCaseStudy />} />
+        <Route path="/work/servesync/case-study" element={<ServeSyncCaseStudy />} />
         {/* <Route path="/testimonials" element={<Testimonials />} /> */}
         <Route path="/typography-preview" element={<TypographyPreview />} />
         <Route path="/lab" element={<Lab />} />
